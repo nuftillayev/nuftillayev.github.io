@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Payment form</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="payment-form">
+            <div class="payment-form_anim-trans"></div>
+            <form onsubmit="status_payment(event)" class="payment-form__content-pay">
+                <div class="main-content">
+                    <div class="form-control">
+                        <h4 class="form-control__title">Info</h4>
+                        <p class="form-control__info">Enter your email address</p>
+                        <input required type="email" placeholder="team@checkforpatent.com" class="form-control__input">
+                    </div>
+                    <div id="content-draw-products">
+                        <div class="form-control form-control__product">
+                            <h4 class="form-control__title">Product 1 <img class="delete-product" src="./icons/delete.svg"></h4>
+                            <p class="form-control__info">Enter main keyword for the product</p>
+                            <input type="text" placeholder="for exapmle, sylicon wine cup" class="form-control__input">
+                            <p class="form-control__info">Enter link to the similar product as a reference</p>
+                            <input type="url" required value="https://" placeholder="https://..." class="form-control__input">
+                        </div>
+                    </div>
+                    <div class="add-more-products">
+                        <div class="add-more-products__button">
+                            <button type="button" class="add-more-products__button-text">Add more products
+                                <img class="add-more-products__button-icons" src="./icons/plus.svg">
+                            </button>
+                        </div>
+                        <p class="add-more-products__info">We offer discount up to 36% for multiple checks</p>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-content__wrapping-button">
+                        <button type="submit" class="footer-content__button">Submit and Pay <span
+                                class="button-pay__btn-price">24.99</span> USD</button>
+                        <p class="mask">Submit and Pay <span class="button-pay__btn-price">24.99</span> USD</p>
+                    </div>
+                    <div class="footer-content__secure-payment"><img src="./icons/lock.svg">Secure payment with Stripe
+                    </div>
+                </div>
+            </form>
+            <div class="payment-form__content-services display-none">
+                <div class="main-content">
+                    <div class="form-control">
+                        <h4 class="form-control__title">Adding more products</h4>
+                        <p class="form-control__info">The more items your check, the better the price</p>
+                        <input checked name="products" value="5" data-price='80' type="radio" id="five-products"
+                            class="form-group__input-radio">
+                        <label for="five-products" class="form-group">
+                            <label class="form-group__label-radio" for="five-products"><span
+                                    class="indicator"></span></label>
+                            <div class="form-group__text-content">
+                                <h4 class="form-group__title">5 products for 80 usd / 16$ for each</h4>
+                                <p class="form-group__info">You safe 36% on each patent check</p>
+                            </div>
+                        </label>
+                        <input name="products" value="4" data-price='72' type="radio" id="four-products"
+                            class="form-group__input-radio">
+                        <label for="four-products" class="form-group">
+                            <label class="form-group__label-radio" for="four-products"><span
+                                    class="indicator"></span></label>
+                            <div class="form-group__text-content">
+                                <h4 class="form-group__title">4 products for 72 usd / 18$ for each</h4>
+                                <p class="form-group__info">You safe 28% on each patent check</p>
+                            </div>
+                        </label>
+                        <input name="products" value="3" data-price='60' type="radio" id="three-products"
+                            class="form-group__input-radio">
+                        <label for="three-products" class="form-group">
+                            <label class="form-group__label-radio" for="three-products"><span
+                                    class="indicator"></span></label>
+                            <div class="form-group__text-content">
+                                <h4 class="form-group__title">3 products for 60 usd / 20$ for each</h4>
+                                <p class="form-group__info">You safe 20% on each patent check</p>
+                            </div>
+                        </label>
+                        <input name="products" value="2" data-price='44' type="radio" id="two-products" class="form-group__input-radio">
+                        <label for="two-products" class="form-group">
+                            <label class="form-group__label-radio" for="two-products"><span
+                                    class="indicator"></span></label>
+                            <div class="form-group__text-content">
+                                <h4 class="form-group__title">2 products for 44 usd / 22$ for each</h4>
+                                <p class="form-group__info">You safe 12% on each patent check</p>
+                            </div>
+                        </label>
+                        <input name="products" value="1" data-price='24.99' type="radio" id="one-products" class="form-group__input-radio">
+                        <label for="one-products" class="form-group">
+                            <label class="form-group__label-radio" for="one-products"><span
+                                    class="indicator"></span></label>
+                            <div class="form-group__text-content">
+                                <h4 class="form-group__title">1 products for 24.99 usd</h4>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-content__wrapping-button">
+                        <button type="button" class="footer-content__button">Continue</button>
+                        <p class="mask">Continue</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+
+</html>

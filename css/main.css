@@ -1,0 +1,384 @@
+@import url("./../fonts/gilroy/stylesheet.css");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box; }
+  *::selection {
+    background-color: transparent; }
+
+html,
+body {
+  font-size: 16px;
+  font-family: 'Gilroy', sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F4F5FA; }
+
+a,
+button {
+  font-family: "Gilroy"; }
+
+.wrapper {
+  width: 440px;
+  height: 535px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .wrapper::after {
+    content: '';
+    width: 102px;
+    height: 118px;
+    position: absolute;
+    top: -15px;
+    right: -35px;
+    z-index: -1;
+    background-image: url("./../images/grid.png");
+    background-repeat: repeat;
+    background-position: 0px 0px;
+    background-size: 100%; }
+  .wrapper .payment-form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #fff;
+    padding: 35px;
+    padding-right: 15px;
+    box-shadow: 10px 10px 60px #E2E7FF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    overflow: hidden; }
+    .wrapper .payment-form .payment-form_anim-trans {
+      width: 445px;
+      height: 480px;
+      border-right: 3px solid #23C96770;
+      position: absolute;
+      top: 30px;
+      left: -430px;
+      background-color: #fff;
+      z-index: 100;
+      opacity: 0; }
+    .wrapper .payment-form .payment-form__content-pay,
+    .wrapper .payment-form .payment-form__content-services,
+    .wrapper .payment-form .payment-form__content-status-pay {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      .wrapper .payment-form .payment-form__content-pay.display-none,
+      .wrapper .payment-form .payment-form__content-services.display-none,
+      .wrapper .payment-form .payment-form__content-status-pay.display-none {
+        display: none; }
+      .wrapper .payment-form .payment-form__content-pay .main-content,
+      .wrapper .payment-form .payment-form__content-services .main-content,
+      .wrapper .payment-form .payment-form__content-status-pay .main-content {
+        width: 100%;
+        height: 367px;
+        margin-bottom: 19px;
+        padding-right: 16px;
+        overflow-y: auto; }
+        .wrapper .payment-form .payment-form__content-pay .main-content::-webkit-scrollbar,
+        .wrapper .payment-form .payment-form__content-services .main-content::-webkit-scrollbar,
+        .wrapper .payment-form .payment-form__content-status-pay .main-content::-webkit-scrollbar {
+          width: 4px;
+          border-radius: 5px; }
+        .wrapper .payment-form .payment-form__content-pay .main-content::-webkit-scrollbar-track,
+        .wrapper .payment-form .payment-form__content-services .main-content::-webkit-scrollbar-track,
+        .wrapper .payment-form .payment-form__content-status-pay .main-content::-webkit-scrollbar-track {
+          background-color: #E1E3EE; }
+        .wrapper .payment-form .payment-form__content-pay .main-content::-webkit-scrollbar-thumb,
+        .wrapper .payment-form .payment-form__content-services .main-content::-webkit-scrollbar-thumb,
+        .wrapper .payment-form .payment-form__content-status-pay .main-content::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background-color: #23C967; }
+        .wrapper .payment-form .payment-form__content-pay .main-content #content-draw-products,
+        .wrapper .payment-form .payment-form__content-services .main-content #content-draw-products,
+        .wrapper .payment-form .payment-form__content-status-pay .main-content #content-draw-products {
+          width: 100%; }
+        .wrapper .payment-form .payment-form__content-pay .main-content .form-control,
+        .wrapper .payment-form .payment-form__content-services .main-content .form-control,
+        .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control {
+          width: 100%;
+          margin-bottom: 10px; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__title,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__title,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__title {
+            font-size: 18px;
+            line-height: 24px;
+            color: #1C154E;
+            margin-bottom: 12px; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__title img.delete-product,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__title img.delete-product,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__title img.delete-product {
+              visibility: hidden;
+              vertical-align: middle;
+              cursor: pointer; }
+              .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__title img.delete-product.show,
+              .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__title img.delete-product.show,
+              .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__title img.delete-product.show {
+                visibility: visible; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__info,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__info,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__info {
+            color: #1C154E;
+            margin-bottom: 6px;
+            font-weight: 500;
+            line-height: 23px;
+            opacity: 0.8; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__input,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__input,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__input {
+            width: 100%;
+            border: 0px;
+            border-bottom: 1px solid #E1E3EE;
+            padding: 7px 0px;
+            margin-bottom: 15px;
+            font-family: 'Gilroy'; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__input::placeholder,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__input::placeholder,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__input::placeholder {
+              color: #D0D3E2;
+              font-size: 16px; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__input:focus,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__input:focus,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__input:focus {
+              outline: none; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__image.image_successfull,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__image.image_successfull,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__image.image_successfull {
+            width: 157px;
+            height: 123px;
+            margin: 28px auto 0px auto; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__image.image_failed,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__image.image_failed,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__image.image_failed {
+            width: 310px;
+            height: 244px;
+            margin: 0px auto 0px auto; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-control__image.image_failed img,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-control__image.image_failed img,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-control__image.image_failed img {
+              height: 100%; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group__input-radio,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group__input-radio,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group__input-radio {
+            display: none; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group__input-radio:checked + .form-group .form-group__label-radio .indicator,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group__input-radio:checked + .form-group .form-group__label-radio .indicator,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group__input-radio:checked + .form-group .form-group__label-radio .indicator {
+              opacity: 1; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group__input-radio:checked + .form-group .form-group__text-content .form-group__info,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group__input-radio:checked + .form-group .form-group__text-content .form-group__info,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group__input-radio:checked + .form-group .form-group__text-content .form-group__info {
+              color: #23C967; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group__input-radio:checked + .form-group,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group__input-radio:checked + .form-group,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group__input-radio:checked + .form-group {
+              background-color: #F4F5FA; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group {
+            width: 100%;
+            height: 58px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 2px solid #E1E3EE;
+            border-bottom: none;
+            transition: background-color 0.3s ease-out;
+            cursor: pointer; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group:first-of-type,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group:first-of-type,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group:first-of-type {
+              border-top-left-radius: 15px;
+              border-top-right-radius: 15px; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group:last-of-type,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group:last-of-type,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group:last-of-type {
+              border-bottom-left-radius: 15px;
+              border-bottom-right-radius: 15px;
+              border-bottom: 2px solid #E1E3EE; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group .form-group__label-radio,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group .form-group__label-radio,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group .form-group__label-radio {
+              width: 22px;
+              height: 22px;
+              border-radius: 50%;
+              border: 1.5px solid #E1E3EE;
+              margin: 0px 12px 0px 17px;
+              position: relative;
+              padding: 3.5px;
+              cursor: pointer; }
+              .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group .form-group__label-radio .indicator,
+              .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group .form-group__label-radio .indicator,
+              .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group .form-group__label-radio .indicator {
+                display: block;
+                opacity: 0;
+                width: 13px;
+                height: 13px;
+                background-color: #23C967;
+                border-radius: 50%; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group .form-group__text-content .form-group__title,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group .form-group__text-content .form-group__title,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group .form-group__text-content .form-group__title {
+              font-weight: 600;
+              line-height: 20px;
+              margin-bottom: 5px; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control .form-group .form-group__text-content .form-group__info,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control .form-group .form-group__text-content .form-group__info,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control .form-group .form-group__text-content .form-group__info {
+              font-weight: normal;
+              font-size: 13px;
+              line-height: 16px;
+              color: #A7A2CB;
+              transition: color 0.3s ease-out; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .form-control.form-control__product,
+          .wrapper .payment-form .payment-form__content-services .main-content .form-control.form-control__product,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control.form-control__product {
+            overflow: hidden;
+            position: relative; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control.form-control__product::after,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control.form-control__product::after,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control.form-control__product::after {
+              content: '';
+              position: absolute;
+              top: 101%;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border-top: 2px solid #23C96770;
+              background-color: #fff;
+              transition: top 0.6s ease-out;
+              z-index: 50; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .form-control.form-control__product.delete-product-anim::after,
+            .wrapper .payment-form .payment-form__content-services .main-content .form-control.form-control__product.delete-product-anim::after,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .form-control.form-control__product.delete-product-anim::after {
+              top: 0%; }
+        .wrapper .payment-form .payment-form__content-pay .main-content .add-more-products,
+        .wrapper .payment-form .payment-form__content-services .main-content .add-more-products,
+        .wrapper .payment-form .payment-form__content-status-pay .main-content .add-more-products {
+          width: 100%; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .add-more-products .add-more-products__button,
+          .wrapper .payment-form .payment-form__content-services .main-content .add-more-products .add-more-products__button,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .add-more-products .add-more-products__button {
+            width: 100%;
+            margin-bottom: 12px; }
+            .wrapper .payment-form .payment-form__content-pay .main-content .add-more-products .add-more-products__button .add-more-products__button-text,
+            .wrapper .payment-form .payment-form__content-services .main-content .add-more-products .add-more-products__button .add-more-products__button-text,
+            .wrapper .payment-form .payment-form__content-status-pay .main-content .add-more-products .add-more-products__button .add-more-products__button-text {
+              font-size: 18px;
+              line-height: 22px;
+              color: #23C967;
+              font-weight: 600;
+              background-color: transparent;
+              border: none;
+              cursor: pointer; }
+              .wrapper .payment-form .payment-form__content-pay .main-content .add-more-products .add-more-products__button .add-more-products__button-text .add-more-products__button-icons,
+              .wrapper .payment-form .payment-form__content-services .main-content .add-more-products .add-more-products__button .add-more-products__button-text .add-more-products__button-icons,
+              .wrapper .payment-form .payment-form__content-status-pay .main-content .add-more-products .add-more-products__button .add-more-products__button-text .add-more-products__button-icons {
+                width: 14px;
+                height: 14px;
+                vertical-align: -1px;
+                cursor: pointer; }
+              .wrapper .payment-form .payment-form__content-pay .main-content .add-more-products .add-more-products__button .add-more-products__button-text:hover,
+              .wrapper .payment-form .payment-form__content-services .main-content .add-more-products .add-more-products__button .add-more-products__button-text:hover,
+              .wrapper .payment-form .payment-form__content-status-pay .main-content .add-more-products .add-more-products__button .add-more-products__button-text:hover {
+                text-shadow: 1px 1px 2px #c1cfc7; }
+          .wrapper .payment-form .payment-form__content-pay .main-content .add-more-products .add-more-products__info,
+          .wrapper .payment-form .payment-form__content-services .main-content .add-more-products .add-more-products__info,
+          .wrapper .payment-form .payment-form__content-status-pay .main-content .add-more-products .add-more-products__info {
+            line-height: 18px;
+            color: #1C154E;
+            font-weight: 500; }
+      .wrapper .payment-form .payment-form__content-pay .footer-content,
+      .wrapper .payment-form .payment-form__content-services .footer-content,
+      .wrapper .payment-form .payment-form__content-status-pay .footer-content {
+        width: 100%;
+        height: 75px;
+        padding-right: 16px; }
+        .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button,
+        .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button,
+        .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button {
+          position: relative;
+          width: 100%;
+          height: 45px;
+          margin-bottom: 11px;
+          cursor: pointer;
+          overflow: hidden; }
+          .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button .mask,
+          .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button .mask,
+          .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #23C967;
+            border-radius: 15px;
+            border: 1px solid #23C967;
+            letter-spacing: 1px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 44px;
+            z-index: -1; }
+            .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button .mask.button_color_failed,
+            .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button .mask.button_color_failed,
+            .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button .mask.button_color_failed {
+              color: #EA717F;
+              border-color: #EA717F; }
+          .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button .footer-content__button,
+          .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button .footer-content__button,
+          .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button .footer-content__button {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            border-radius: 15px;
+            background-color: #23C967;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+            mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+            -webkit-mask-size: 3000% 100%;
+            mask-size: 3000% 100%;
+            -webkit-mask-position: 0 0;
+            mask-position: 0 0;
+            -webkit-transition: -webkit-mask-position 0.4s steps(29);
+            -webkit-transition-property: -webkit-mask-position, mask-position;
+            transition: -webkit-mask-position 0.4s steps(29);
+            transition-property: -webkit-mask-position, mask-position;
+            cursor: pointer; }
+            .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button .footer-content__button:hover,
+            .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button .footer-content__button:hover,
+            .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button .footer-content__button:hover {
+              -webkit-mask-position: 100% 0;
+              mask-position: 100% 0; }
+            .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button .footer-content__button.button_color_failed,
+            .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button .footer-content__button.button_color_failed,
+            .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button .footer-content__button.button_color_failed {
+              background-color: #EA717F; }
+            .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__wrapping-button .footer-content__button.not-hover:hover,
+            .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__wrapping-button .footer-content__button.not-hover:hover,
+            .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__wrapping-button .footer-content__button.not-hover:hover {
+              -webkit-mask-position: 0 0;
+              mask-position: 0 0; }
+        .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__secure-payment,
+        .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__secure-payment,
+        .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__secure-payment {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 17px;
+          color: #AFB4CC;
+          text-align: center; }
+          .wrapper .payment-form .payment-form__content-pay .footer-content .footer-content__secure-payment img,
+          .wrapper .payment-form .payment-form__content-services .footer-content .footer-content__secure-payment img,
+          .wrapper .payment-form .payment-form__content-status-pay .footer-content .footer-content__secure-payment img {
+            width: 11px;
+            height: 13px;
+            margin-right: 3px; }
+
+/*# sourceMappingURL=main.css.map */

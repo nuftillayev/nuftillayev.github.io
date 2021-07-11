@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/main.css">
+    <title>Payment form</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="payment-form">
+            <div class="payment-form__content-status-pay content-status-pay__failed">
+                <div class="main-content">
+                    <div class="form-control">
+                        <h4 class="form-control__title">Your payment failed</h4>
+                        <div class="form-control__info">Sorry, but we’ve having trouble processing your payment. You
+                            have been not charged for this transaction.</div>
+                        <div class="form-control__image image_failed"><img src="./../icons/failed-payment.svg"
+                                alt="successfull-payment"></div>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-content__wrapping-button">
+                        <button type="button" class="footer-content__button button_color_failed">Try to pay
+                            again</button>
+                        <p class="mask button_color_failed">Try to pay again</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./../js/prevLocation.js"></script>
+</body>
+
+</html>
